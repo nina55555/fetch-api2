@@ -7,6 +7,7 @@ export default function Home() {
             <form >
                 <label htmlFor="somme">entrez une somme</label>
                 <br/>
+                <br/>
                 <input type="number" name="somme" id="somme"/>
                 <input type="submit" value="somme"/>
             </form>
