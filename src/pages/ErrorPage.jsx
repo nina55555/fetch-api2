@@ -1,8 +1,12 @@
 
+import { Link } from "react-router-dom"
 
-import Navbar from "../components/Navbar"
 export default function ErrorPage() {
-    return
-    <h1>404 vous allons vous aider a trouver votre chemin</h1>
-    
+    return(
+        <div>
+            <h1>404 vous allons vous aider a trouver votre chemin</h1>
+            <p> Revenez avec nous ! <Link to='/'>HOME</Link>
+            </p>
+        </div>  
+    )
 }

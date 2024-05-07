@@ -1,36 +1,63 @@
+import { useState } from 'react'
+import './css/App.css'
+import {
+  createBrowserRouter,
+  Route,
+  Link,
+  RouterProvider,
+} from "react-router-dom";
+import Navbar from './components/Navbar'
+import Home from './pages/Home'
+import Collection from './pages/Collection'
+import About from './pages/About'
+import Contact from './pages/Contact'
+import ErrorPage from './pages/ErrorPage'
+import Book from './pages/Book'
 
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import {Home} from "./pages/Home";
-import {Collection} from "./pages/Collection";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import ErrorPage from "./pages/ErrorPage";
 
 
 
-export default function App() {
-  return  <>
-    <h1>bonjouww</h1>
-    
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
 
+  {
+    path: "/collection",
+    element: <Collection />,
+  },
 
- 
- 
-<BrowserRouter>
-<Routes>
-  <Route index element= {<Home/>}/>
-  <Route path= "/" element= {<Home/>}/>
-  <Route path= "/Home" element= {<Home/>}/>
-  <Route path= "/collection" element= {<Collection/>}/>
-  <Route path= "/about" element= {<About/>}/>
-  <Route path= "/contact" element= {<Contact/>}/>
-  <Route path= "*" element= {<ErrorPage/>}/>
-</Routes>
-</BrowserRouter>
- </>
- 
- 
+  {
+    path: "/about",
+    element: <About />,
+  },
 
-  
+  {
+    path: "/contact",
+    element: <Contact />,
+  },
+
+  {
+    path: "*",
+    element: <ErrorPage />,
+  },
+
+  {
+    path: "/book",
+    element: <Book />,
+  },
+
+]);
+
+function App() {
+  return (
+    <div className='App'>
+      <Navbar />
+      <h1>je suis le tout puissant App</h1>
+      <RouterProvider router={router} />
+    </div>
+  )
 }
+
+export default App
